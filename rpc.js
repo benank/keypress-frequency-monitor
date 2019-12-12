@@ -55,19 +55,13 @@ module.exports = class RPC
                     "args": []
                 }
             }, (data) => {
-                console.log("scene switch data")
-                console.log(data);
+                console.log("Subscribed to scene switch event")
             })
 
         })
         
         this.client.on('data', (data) => {
             data = JSON.parse(data.toString());
-
-            if (data.result == null)
-            {
-                return;
-            }
 
             if (data.error)
             {
@@ -79,7 +73,7 @@ module.exports = class RPC
             {
                 this.callbacks[data.id](data);
             }
-            else if (data.result._type == "EVENT")
+            else if (data.result != null && data.result._type == "EVENT")
             {
                 this.on_event(data);
             }

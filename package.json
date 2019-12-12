@@ -1,0 +1,7 @@
+{
+    "name": "keypress-frequency-monitor",
+    "version": "1.0.0",
+    "dependencies": {
+        "iohook": "^0.6.2"
+    }
+}

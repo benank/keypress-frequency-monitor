@@ -1,7 +1,18 @@
 {
-    "name": "keypress-frequency-monitor",
-    "version": "1.0.0",
-    "dependencies": {
-        "iohook": "^0.6.2"
-    }
+  "name": "keypress-frequency-monitor",
+  "version": "1.0.0",
+  "dependencies": {
+    "iohook": "^0.6.2"
+  },
+  "iohook": {
+    "targets": [
+      "node-64"
+    ],
+    "platforms": [
+      "win32"
+    ],
+    "arches": [
+      "x64"
+    ]
+  }
 }

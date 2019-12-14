@@ -10,10 +10,10 @@ ioHook.on('keydown', (event) => {
 });
 
 const MAX_KEYS_PER_ENTRY = 3;
-const KEY_THRESHOLD = 5;
-const KEY_PRESS_TIMEOUT = 500;
+const KEY_THRESHOLD = 6;
+const KEY_PRESS_TIMEOUT = 150;
 
-const FULLSCREEN_TIMEOUT = 3000;
+const FULLSCREEN_TIMEOUT = 2000;
 const fullscreen_timeouts = 
 {
     "player1": null,
@@ -67,6 +67,7 @@ function EnableFullscreen(player)
     if (fullscreen_timeouts[player] == null)
     {
         // Not showing, so show it
+        console.log("toggle vis!");
         RPC.toggle_player_resources(player, true);
     }
 
@@ -93,7 +94,4 @@ function SumKeys(player) {
 }
 
 // Register and start hook
-ioHook.start();
-
-// Alternatively, pass true to start in DEBUG mode.
 ioHook.start();
